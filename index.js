@@ -1,3 +1,8 @@
+let pass1El = document.getElementById("randomPass1");
+let pass2El = document.getElementById("randomPass2");
+let passLength = 11;
+// console.log(pass1E2);
+
 const characters = [
   "A",
   "B",
@@ -91,3 +96,21 @@ const characters = [
   "?",
   "/",
 ];
+
+function randomChar() {
+  s = Math.floor(Math.random() * characters.length);
+  return characters[s];
+}
+
+function randomPass() {
+  let generatedPass = "";
+  for (let i = 0; i < passLength; i++) {
+    generatedPass += randomChar();
+  }
+  return generatedPass;
+}
+
+function generatePass() {
+  pass1El.textContent = randomPass();
+  pass2El.textContent = randomPass();
+}
